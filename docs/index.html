@@ -60,10 +60,6 @@
   ga('send', 'pageview');
 
 </script>
-<link rel="stylesheet"
-      type="text/css"
-      href="https://raw.githubusercontent.com/benmarwick/bookdown-ort/master/_includes/style.css"
-/>
 
 
 <style type="text/css">
@@ -104,8 +100,8 @@ code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* Com
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
-<link rel="stylesheet" href="_includes\style.css" type="text/css" />
-<link rel="stylesheet" href="_includes\font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="font-awesome.min.css" type="text/css" />
 </head>
 
 <body>
@@ -204,12 +200,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 This book is in <b><a href="https://github.com/benmarwick/aswr">Open Review</a></b>. I want your feedback to make the book better for you and other readers. To add your annotation, <span style="background-color: #3297FD; color: white">select some text</span> and then click the <i class="h-icon-annotate"></i> on the pop-up menu. To see the annotations of others, click the <i class="h-icon-chevron-left"></i> in the upper right hand corner of the page <i class="fa fa-arrow-circle-right  fa-rotate-315" aria-hidden="true"></i>
 </div>
 <p></p>
-<p>The feedback tool is <a href="https://hypothes.is/">hypothes.is</a>, which enables sentence-level annotation directly on the page. There is a script in <code>_includes/hypothesis.html</code>, which we call in <code>_output.yml</code> like this:</p>
+<p>The feedback tool is <a href="https://hypothes.is/">hypothes.is</a>, which enables sentence-level annotation directly on the page. There is a script in <code>hypothesis.html</code>, which we call in <code>_output.yml</code> like this:</p>
 <pre><code>bookdown::gitbook:
   includes:
-    in_header: [_includes/hypothesis.html, _includes/google_analytics.html]
-  css: [_includes/style.css, _includes/font-awesome.css]</code></pre>
-<p>The <code>hypothesis.html</code> file contains a short script that activates the tool on this site. The ORT also had code to track the use of <a href="https://hypothes.is/">hypothes.is</a>, but I don’t understand how that works, so I haven’t done it here. To make the fontawesome icons work, we need to have <code>_included/font-awesome.min.css</code> in our project.</p>
+    in_header: [hypothesis.html, google_analytics.html]
+  css: [style.css, font-awesome.css]</code></pre>
+<p>The <code>hypothesis.html</code> file contains a short script that activates the tool on this site. The ORT also had code to track the use of <a href="https://hypothes.is/">hypothes.is</a>, but I don’t understand how that works, so I haven’t done it here. To make the fontawesome icons work, we need to have <code>font-awesome.min.css</code> in our project.</p>
 <p>There are also additions to <code>style.css</code> to make the inline images in the custom block (named <code>rmdreview</code>), and the speech bubbles on the left side of the block:</p>
 <pre><code>.h-icon-chevron-left {
     background: white;
@@ -249,7 +245,7 @@ This book is in <b><a href="https://github.com/benmarwick/aswr">Open Review</a><
 <p>The call-to-action block can appear at the bottom of each page to invite the reader to submit their email address to receive updates on the book. This enables us to collect email addresses into a google sheet. The custom block looks like this:</p>
 
 <div class="rmdsale">
-Want to know when the book is for sale? Enter your email so I can let you know. <iframe src="_includes/email_submit.html" width="760" height="30" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+Want to know when the book is for sale? Enter your email so I can let you know. <iframe src="email_submit.html" width="760" height="30" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </div>
 <p></p>
 <p>This custom block is called <code>rmdsale</code>, and is styled with some css:</p>
@@ -269,13 +265,13 @@ Want to know when the book is for sale? Enter your email so I can let you know. 
     bottom: 0px;
     font-size: 40px;
  }</code></pre>
-<p>The text field for readers to enter their email address is created by code in <code>_includes/email_submit.html</code>, which inserts some elements from a google form into the page.</p>
+<p>The text field for readers to enter their email address is created by code in <code>email_submit.html</code>, which inserts some elements from a google form into the page.</p>
 <p>To make this work, we have to create a new google form (using the ‘old google forms’, not the current version), and copy over the key and HTML element details from the default form view. Chrome’s element inspector is very handy for identifying the element details that need to go in <code>email_submit.html</code>.</p>
 <p>The confirmation page that the reader sees after they submit their email is not yet elegant, it’s just the default google forms page. I’m not sure what to do about that.</p>
 </div>
 <div id="google-analytics" class="section level3">
 <h3><span class="header-section-number">1.1.3</span> Google analytics</h3>
-<p>This is already used in many bookdown projects, and is easy to enable. We go to <a href="https://analytics.google.com" class="uri">https://analytics.google.com</a>, create a new account, and get the code snippet and paste it into <code>google_analytics.html</code> in <code>_includes/</code>. After that, we add a reference to <code>google_analytics.html</code> in <code>_output.yml</code>, as noted above. And that’s it for setting up the analytics.</p>
+<p>This is already used in many bookdown projects, and is easy to enable. We go to <a href="https://analytics.google.com" class="uri">https://analytics.google.com</a>, create a new account, and get the code snippet and paste it into <code>google_analytics.html</code>. After that, we add a reference to <code>google_analytics.html</code> in <code>_output.yml</code>, as noted above. And that’s it for setting up the analytics.</p>
 </div>
 <div id="not-yet-implemented" class="section level3">
 <h3><span class="header-section-number">1.1.4</span> Not yet implemented</h3>
@@ -283,7 +279,7 @@ Want to know when the book is for sale? Enter your email so I can let you know. 
 </div>
 <div id="issues" class="section level3">
 <h3><span class="header-section-number">1.1.5</span> Issues</h3>
-<p>Why doesn’t <code>docs/</code> get all the files from <code>_includes/</code>? Currently I only see <code>style.css</code> and <code>email_submit.html</code>. That’s odd, and stops the custom blocks from looking as they should.</p>
+<p>Why doesn’t <code>docs/</code> get all the files from <code>/</code>? Currently I only see <code>style.css</code> and <code>email_submit.html</code>. That’s odd, and stops the custom blocks from looking as they should.</p>
 
 </div>
 </div>

@@ -49,16 +49,16 @@ This is a custom block that can appear at the top of each page informing the rea
 This book is in <b><a href="https://github.com/benmarwick/aswr">Open Review</a></b>. I want your feedback to make the book better for you and other readers. To add your annotation, <span style="background-color: #3297FD; color: white">select some text</span> and then click the <i class="h-icon-annotate"></i> on the pop-up menu. To see the annotations of others, click the <i class="h-icon-chevron-left"></i> in the upper right hand corner of the page <i class="fa fa-arrow-circle-right  fa-rotate-315" aria-hidden="true"></i>
 ```
 
-The feedback tool is [hypothes.is](https://hypothes.is/), which enables sentence-level annotation directly on the page. There is a script in  `_includes/hypothesis.html`, which we call in `_output.yml` like this:
+The feedback tool is [hypothes.is](https://hypothes.is/), which enables sentence-level annotation directly on the page. There is a script in  `hypothesis.html`, which we call in `_output.yml` like this:
 
 ```
 bookdown::gitbook:
   includes:
-    in_header: [_includes/hypothesis.html, _includes/google_analytics.html]
-  css: [_includes/style.css, _includes/font-awesome.css]
+    in_header: [hypothesis.html, google_analytics.html]
+  css: [style.css, font-awesome.css]
 ```
 
-The `hypothesis.html` file contains a short script that activates the tool on this site. The ORT also had code to track the use of [hypothes.is](https://hypothes.is/), but I don't understand how that works, so I haven't done it here. To make the fontawesome icons work, we need to have `_included/font-awesome.min.css` in our project. 
+The `hypothesis.html` file contains a short script that activates the tool on this site. The ORT also had code to track the use of [hypothes.is](https://hypothes.is/), but I don't understand how that works, so I haven't done it here. To make the fontawesome icons work, we need to have `font-awesome.min.css` in our project. 
 
 There are also additions to `style.css` to make the inline images in the custom block (named `rmdreview`), and the speech bubbles on the left side of the block:
 
@@ -103,7 +103,7 @@ The call-to-action block can appear at the bottom of each page to invite the rea
 
 ```{block2, sale-example, type='rmdsale'}
 Want to know when the book is for sale? Enter your email so I can let you know. 
-<iframe src="_includes/email_submit.html" width="760" height="30" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+<iframe src="email_submit.html" width="760" height="30" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 ```
 
 This custom block is called `rmdsale`, and is styled with some css:
@@ -126,7 +126,7 @@ This custom block is called `rmdsale`, and is styled with some css:
     font-size: 40px;
  }
 ```
-The text field for readers to enter their email address is created by code in `_includes/email_submit.html`, which inserts some elements from a google form into the page.
+The text field for readers to enter their email address is created by code in `email_submit.html`, which inserts some elements from a google form into the page.
 
 To make this work, we have to create a new google form (using the 'old google forms', not the current version), and copy over the key and HTML element details from the default form view. Chrome's element inspector is very handy for identifying the element details that need to go in `email_submit.html`. 
 
@@ -134,7 +134,7 @@ The confirmation page that the reader sees after they submit their email is not 
 
 ### Google analytics
 
-This is already used in many bookdown projects, and is easy to enable. We go to <https://analytics.google.com>, create a new account, and get the code snippet and paste it into `google_analytics.html` in `_includes/`. After that, we add a reference to `google_analytics.html` in `_output.yml`, as noted above. And that's it for setting up the analytics. 
+This is already used in many bookdown projects, and is easy to enable. We go to <https://analytics.google.com>, create a new account, and get the code snippet and paste it into `google_analytics.html`. After that, we add a reference to `google_analytics.html` in `_output.yml`, as noted above. And that's it for setting up the analytics. 
 
 ### Not yet implemented
 
@@ -142,7 +142,7 @@ Matt's ORT contains several other features that are not implemented here. These 
 
 ### Issues
 
-Why doesn't `docs/` get all the files from `_includes/`? Currently I only see `style.css` and `email_submit.html`. That's odd, and stops the custom blocks from looking as they should. 
+Why doesn't `docs/` get all the files from `/`? Currently I only see `style.css` and `email_submit.html`. That's odd, and stops the custom blocks from looking as they should. 
 
 
 
