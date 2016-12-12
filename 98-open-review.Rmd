@@ -1,10 +1,10 @@
-# Open Review
+# Open Review {#open}
 
-Most of the text on this page is taken from [Matthew Salganik's](https://twitter.com/msalganik) [Open Review Toolkit Privacy and Consent page](http://www.bitbybitbook.com/en/privacy/)
-
-Open Review means that you can freely read the book and easily help to make it better. You can offer suggestions by make annotations using [hypothes.is](https://hypothes.is/), an open source annotation system. Further, the website will be collecting your implicit feedback by tracking the readership and abandonment rate of each section of the book.
+Open Review means that you can freely read the book and easily help to make it better. You can offer suggestions by make annotations using [hypothes.is](https://hypothes.is/), an open source annotation system. This is a very simple system for interacting with the book. If you are familiar with GitHub or Git, you can also comment using [GitHub's issue tracker](https://github.com/benmarwick/bookdown-ort/issues/new) for the book, or make a pull request. In addition to these feedback options, this website for the book will be collecting your implicit feedback by tracking the readership and abandonment rate of each section of the book.
 
 Open Review takes place before and at the same time as the book publisher's peer review. The feedback from Open Review and peer review will be used to create a revised manuscript. The Open Review period will end when the final manuscript is submitted to the publisher. 
+
+The concept of Open Review, as it is implemented here, is taken from [Matthew Salganik's](https://twitter.com/msalganik) [Open Review Toolkit](http://www.openreviewtoolkit.org/). Much of the text on this page comes from the [Open Review Toolkit About page](http://www.bitbybitbook.com/en/open-review/) and the [Open Review Toolkit Privacy and Consent page](http://www.bitbybitbook.com/en/privacy/)
 
 ## FAQ about open review
 
