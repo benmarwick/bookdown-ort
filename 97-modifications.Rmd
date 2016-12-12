@@ -108,3 +108,34 @@ Matt's ORT contains several other features that are not implemented here. These 
 ### Issues
 
 It is important to keep `style.css` and the custom html files in the top level directory of the book. I tried putting them all in a directory together, but couldn't get it to work. 
+
+### Reuse
+
+The code for the Open Review Toolkit has an [MIT license](https://github.com/open-review-toolkit/open-review-toolkit/blob/master/LICENSE), and so is freely available for reuse. Because this implementation includes some code from that project, the license is used here also:
+
+```
+MIT License
+
+Copyright (c) 2016 Open Review Toolkit & Ben Marwick
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+The text of this chapter is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
