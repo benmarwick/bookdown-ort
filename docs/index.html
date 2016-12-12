@@ -192,6 +192,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>To compile this example to PDF, you need to install XeLaTeX.</p>
 <div id="modifications" class="section level2">
 <h2><span class="header-section-number">1.1</span> Modifications</h2>
+<p><em>Ben Marwick</em></p>
 <p>In this template book, I have made the following modifications inspired by <a href="https://twitter.com/msalganik">Matthew Salganik’s</a> <a href="http://www.openreviewtoolkit.org/">Open Review Toolkit</a>. The ORT is an excellent project to enable low-friction engagement between the author and readers. However, it pre-dates bookdown and lacks some of its flexibility, so this is an effort to bring some of the features of the ORT into bookdown. I’ve made three modifications: an open review block, a call-to-action block, and added google analytics.</p>
 <div id="open-review-block" class="section level3">
 <h3><span class="header-section-number">1.1.1</span> Open review block</h3>
@@ -277,6 +278,7 @@ Want to know when the book is for sale? Enter your email so I can let you know. 
 <div id="not-yet-implemented" class="section level3">
 <h3><span class="header-section-number">1.1.4</span> Not yet implemented</h3>
 <p>Matt’s ORT contains several other features that are not implemented here. These include tracking of hypothes.is use, A/B testing, a tool to translate the book into numerous languages. I’m not sure how to implement those, and would welcome assistance!</p>
+<p>Why doesn’t <code>docs/</code> get all the files from <code>_includes/</code>? Currently I only see <code>style.css</code> and <code>email_submit.html</code>. That’s odd</p>
 
 </div>
 </div>
@@ -309,7 +311,7 @@ gitbook.start({
 "link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
 "text": "Edit"
 },
-"download": null,
+"download": ["bookdown-demo.pdf"],
 "toc": {
 "collapse": "subsection"
 }

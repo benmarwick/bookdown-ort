@@ -37,6 +37,8 @@ knitr::write_bib(c(
 
 ## Modifications
 
+_Ben Marwick_
+
 In this template book, I have made the following modifications inspired by [Matthew Salganik's](https://twitter.com/msalganik) [Open Review Toolkit](http://www.openreviewtoolkit.org/). The ORT is an excellent project to enable low-friction engagement between the author and readers. However, it pre-dates bookdown and lacks some of its flexibility, so this is an effort to bring some of the features of the ORT into bookdown. I've made three modifications: an open review block, a call-to-action block, and added google analytics. 
 
 ### Open review block
@@ -137,6 +139,8 @@ This is already used in many bookdown projects, and is easy to enable. We go to 
 ### Not yet implemented
 
 Matt's ORT contains several other features that are not implemented here. These include tracking of hypothes.is use, A/B testing, a tool to translate the book into numerous languages. I'm not sure how to implement those, and would welcome assistance! 
+
+Why doesn't `docs/` get all the files from `_includes/`? Currently I only see `style.css` and `email_submit.html`. That's odd
 
 
 
