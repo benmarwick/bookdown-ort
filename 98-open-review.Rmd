@@ -36,9 +36,11 @@ Please read our privacy and consent policy, below.
 The AAUP recently published [a report](http://www.aaupnet.org/resources/for-members/handbooks-and-toolkits/peer-review-best-practices) on best practices for peer review.
 
 ### Can I do this with my book?
-Sure. Check out the code for this website at <https://www.github.com/benmarwick/aswr> for more about how we did it.
+
+Sure. Check out the code for this website at <https://github.com/benmarwick/bookdown-ort/> for more about how we did it.
 
 ### I have a different question about Open Review. How can I get in touch?
+
 Send an email to `bmarwick@uw.edu`
 
 ## Privacy and Consent Policy
