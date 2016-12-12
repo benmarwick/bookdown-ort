@@ -1,0 +1,18 @@
+bookdown::pdf_book:
+  includes:
+    in_header: _includes/preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+bookdown::gitbook:
+  includes:
+    in_header: [_includes/hypothesis.html, _includes/google_analytics.html]
+  css: [_includes/style.css, _includes/font-awesome.css]
+  config:
+    sharing: null
+    toc:
+      before: |
+        <li><a href="./">A Minimal Book Example</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
