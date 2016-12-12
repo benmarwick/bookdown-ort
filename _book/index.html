@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>A Minimal Book Example</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Yihui Xie">
+
+
+<meta name="date" content="2016-12-12">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="intro.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script async defer src="https://hypothes.is/embed.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-88838732-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="_includes\style.css" type="text/css" />
+<link rel="stylesheet" href="_includes\font-awesome.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#modifications"><i class="fa fa-check"></i><b>1.1</b> Modifications</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#open-review-block"><i class="fa fa-check"></i><b>1.1.1</b> Open review block</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#call-to-action-block"><i class="fa fa-check"></i><b>1.1.2</b> Call-to-action block</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#google-analytics"><i class="fa fa-check"></i><b>1.1.3</b> Google analytics</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#not-yet-implemented"><i class="fa fa-check"></i><b>1.1.4</b> Not yet implemented</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="7" data-path="open-review.html"><a href="open-review.html"><i class="fa fa-check"></i><b>7</b> Open Review</a><ul>
+<li class="chapter" data-level="7.1" data-path="open-review.html"><a href="open-review.html#faq-about-open-review"><i class="fa fa-check"></i><b>7.1</b> FAQ about open review</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="open-review.html"><a href="open-review.html#what-kind-of-feedback-are-you-looking-for"><i class="fa fa-check"></i><b>7.1.1</b> What kind of feedback are you looking for?</a></li>
+<li class="chapter" data-level="7.1.2" data-path="open-review.html"><a href="open-review.html#can-i-see-the-annotations-that-others-are-making"><i class="fa fa-check"></i><b>7.1.2</b> Can I see the annotations that others are making?</a></li>
+<li class="chapter" data-level="7.1.3" data-path="open-review.html"><a href="open-review.html#what-are-the-benefits-for-readers"><i class="fa fa-check"></i><b>7.1.3</b> What are the benefits for readers?</a></li>
+<li class="chapter" data-level="7.1.4" data-path="open-review.html"><a href="open-review.html#what-are-the-benefits-for-authors-and-publishers"><i class="fa fa-check"></i><b>7.1.4</b> What are the benefits for authors and publishers?</a></li>
+<li class="chapter" data-level="7.1.5" data-path="open-review.html"><a href="open-review.html#has-anyone-ever-done-something-like-this-before"><i class="fa fa-check"></i><b>7.1.5</b> Has anyone ever done something like this before?</a></li>
+<li class="chapter" data-level="7.1.6" data-path="open-review.html"><a href="open-review.html#how-i-can-learn-more-about-traditional-peer-review-of-academic-books"><i class="fa fa-check"></i><b>7.1.6</b> How I can learn more about traditional peer review of academic books?</a></li>
+<li class="chapter" data-level="7.1.7" data-path="open-review.html"><a href="open-review.html#can-i-do-this-with-my-book"><i class="fa fa-check"></i><b>7.1.7</b> Can I do this with my book?</a></li>
+<li class="chapter" data-level="7.1.8" data-path="open-review.html"><a href="open-review.html#i-have-a-different-question-about-open-review.-how-can-i-get-in-touch"><i class="fa fa-check"></i><b>7.1.8</b> I have a different question about Open Review. How can I get in touch?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="open-review.html"><a href="open-review.html#privacy-and-consent-policy"><i class="fa fa-check"></i><b>7.2</b> Privacy and Consent Policy</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="open-review.html"><a href="open-review.html#overview"><i class="fa fa-check"></i><b>7.2.1</b> Overview</a></li>
+<li class="chapter" data-level="7.2.2" data-path="open-review.html"><a href="open-review.html#what-information-do-we-collect"><i class="fa fa-check"></i><b>7.2.2</b> What information do we collect?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="open-review.html"><a href="open-review.html#how-do-we-use-your-information"><i class="fa fa-check"></i><b>7.2.3</b> How do we use your information?</a></li>
+<li class="chapter" data-level="7.2.4" data-path="open-review.html"><a href="open-review.html#how-do-we-protect-your-information"><i class="fa fa-check"></i><b>7.2.4</b> How do we protect your information?</a></li>
+<li class="chapter" data-level="7.2.5" data-path="open-review.html"><a href="open-review.html#do-we-use-cookies"><i class="fa fa-check"></i><b>7.2.5</b> Do we use cookies?</a></li>
+<li class="chapter" data-level="7.2.6" data-path="open-review.html"><a href="open-review.html#do-we-disclose-any-information-to-outside-parties"><i class="fa fa-check"></i><b>7.2.6</b> Do we disclose any information to outside parties?</a></li>
+<li class="chapter" data-level="7.2.7" data-path="open-review.html"><a href="open-review.html#third-party-links"><i class="fa fa-check"></i><b>7.2.7</b> Third party links</a></li>
+<li class="chapter" data-level="7.2.8" data-path="open-review.html"><a href="open-review.html#website-hosting"><i class="fa fa-check"></i><b>7.2.8</b> Website hosting</a></li>
+<li class="chapter" data-level="7.2.9" data-path="open-review.html"><a href="open-review.html#your-consent"><i class="fa fa-check"></i><b>7.2.9</b> Your consent</a></li>
+<li class="chapter" data-level="7.2.10" data-path="open-review.html"><a href="open-review.html#questions"><i class="fa fa-check"></i><b>7.2.10</b> Questions</a></li>
+<li class="chapter" data-level="7.2.11" data-path="open-review.html"><a href="open-review.html#changes-to-our-privacy-and-consent-policy"><i class="fa fa-check"></i><b>7.2.11</b> Changes to our Privacy and Consent Policy</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">A Minimal Book Example</h1>
+<h4 class="author"><em>Yihui Xie</em></h4>
+<h4 class="date"><em>2016-12-12</em></h4>
+</div>
+<div id="prerequisites" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
+<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports, e.g., a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
+<p>For now, you have to install the development versions of <strong>bookdown</strong> from Github:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;rstudio/bookdown&quot;</span>)</code></pre></div>
+<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
+<p>To compile this example to PDF, you need to install XeLaTeX.</p>
+<div id="modifications" class="section level2">
+<h2><span class="header-section-number">1.1</span> Modifications</h2>
+<p>In this template book, I have made the following modifications inspired by <a href="https://twitter.com/msalganik">Matthew Salganik’s</a> <a href="http://www.openreviewtoolkit.org/">Open Review Toolkit</a>. The ORT is an excellent project to enable low-friction engagement between the author and readers. However, it pre-dates bookdown and lacks some of its flexibility, so this is an effort to bring some of the features of the ORT into bookdown. I’ve made three modifications: an open review block, a call-to-action block, and added google analytics.</p>
+<div id="open-review-block" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Open review block</h3>
+<p>This is a custom block that can appear at the top of each page informing the reader that they can give immediate feedback directly on the page. It looks like this:</p>
+
+<div class="rmdreview">
+This book is in <b><a href="https://github.com/benmarwick/aswr">Open Review</a></b>. I want your feedback to make the book better for you and other readers. To add your annotation, <span style="background-color: #3297FD; color: white">select some text</span> and then click the <i class="h-icon-annotate"></i> on the pop-up menu. To see the annotations of others, click the <i class="h-icon-chevron-left"></i> in the upper right hand corner of the page <i class="fa fa-arrow-circle-right  fa-rotate-315" aria-hidden="true"></i>
+</div>
+<p></p>
+<p>The feedback tool is <a href="https://hypothes.is/">hypothes.is</a>, which enables sentence-level annotation directly on the page. There is a script in <code>_includes/hypothesis.html</code>, which we call in <code>_output.yml</code> like this:</p>
+<pre><code>bookdown::gitbook:
+  includes:
+    in_header: [_includes/hypothesis.html, _includes/google_analytics.html]
+  css: [_includes/style.css, _includes/font-awesome.css]</code></pre>
+<p>The <code>hypothesis.html</code> file contains a short script that activates the tool on this site. The ORT also had code to track the use of <a href="https://hypothes.is/">hypothes.is</a>, but I don’t understand how that works, so I haven’t done it here. To make the fontawesome icons work, we need to have <code>_included/font-awesome.min.css</code> in our project.</p>
+<p>There are also additions to <code>style.css</code> to make the inline images in the custom block (named <code>rmdreview</code>), and the speech bubbles on the left side of the block:</p>
+<pre><code>.h-icon-chevron-left {
+    background: white;
+        padding: 3px;
+        border: #eee 1px solid;
+        color: #666;
+      }
+
+.fa-rotate-315 {
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    -o-transform: rotate(315deg);
+    transform: rotate(315deg);
+}
+
+.rmdreview {
+  padding: 1em 1em 1em 5em;
+  margin-bottom: 0px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  position:relative;
+}
+
+.rmdreview:before {
+    content: &quot;\f0e6&quot;;
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    top:10px;
+    bottom: 0px;
+    font-size: 60px;
+ }
+</code></pre>
+</div>
+<div id="call-to-action-block" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Call-to-action block</h3>
+<p>The call-to-action block can appear at the bottom of each page to invite the reader to submit their email address to receive updates on the book. This enables us to collect email addresses into a google sheet. The custom block looks like this:</p>
+
+<div class="rmdsale">
+Want to know when the book is for sale? Enter your email so I can let you know. <iframe src="_includes/email_submit.html" width="760" height="30" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+<p></p>
+<p>This custom block is called <code>rmdsale</code>, and is styled with some css:</p>
+<pre><code> .rmdsale {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 0px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  position:relative;
+}
+
+.rmdsale:before {
+    content: &quot;\f07a&quot;;
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    top:15px;
+    bottom: 0px;
+    font-size: 40px;
+ }</code></pre>
+<p>The text field for readers to enter their email address is created by code in <code>_includes/email_submit.html</code>, which inserts some elements from a google form into the page.</p>
+<p>To make this work, we have to create a new google form (using the ‘old google forms’, not the current version), and copy over the key and HTML element details from the default form view. Chrome’s element inspector is very handy for identifying the element details that need to go in <code>email_submit.html</code>.</p>
+<p>The confirmation page that the reader sees after they submit their email is not yet elegant, it’s just the default google forms page. I’m not sure what to do about that.</p>
+</div>
+<div id="google-analytics" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Google analytics</h3>
+<p>This is already used in many bookdown projects, and is easy to enable. We go to <a href="https://analytics.google.com" class="uri">https://analytics.google.com</a>, create a new account, and get the code snippet and paste it into <code>google_analytics.html</code> in <code>_includes/</code>. After that, we add a reference to <code>google_analytics.html</code> in <code>_output.yml</code>, as noted above. And that’s it for setting up the analytics.</p>
+</div>
+<div id="not-yet-implemented" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> Not yet implemented</h3>
+<p>Matt’s ORT contains several other features that are not implemented here. These include tracking of hypothes.is use, A/B testing, a tool to translate the book into numerous languages. I’m not sure how to implement those, and would welcome assistance!</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
