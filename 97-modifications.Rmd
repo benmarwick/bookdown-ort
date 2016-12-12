@@ -1,0 +1,108 @@
+# Modifications {#mods}
+
+_Ben Marwick_
+
+In this [template book](https://github.com/benmarwick/bookdown-ort), I have made some modifications inspired by [Matthew Salganik's](https://twitter.com/msalganik) [Open Review Toolkit](http://www.openreviewtoolkit.org/). The ORT is an excellent project to enable low-friction engagement between the author and readers. However, it pre-dates bookdown and lacks some of its flexibility, so this is an effort to bring some of the features of the ORT into bookdown. I've made three modifications: an open review block, a call-to-action block, and added google analytics. 
+
+### Open review block
+
+This is a custom block that can appear at the top of each page informing the reader that they can give immediate feedback directly on the page. It looks like this:
+
+```{block2, review-example, type='rmdreview'}
+This book is in <b><a href="https://github.com/benmarwick/aswr">Open Review</a></b>. I want your feedback to make the book better for you and other readers. To add your annotation, <span style="background-color: #3297FD; color: white">select some text</span> and then click the <i class="h-icon-annotate"></i> on the pop-up menu. To see the annotations of others, click the <i class="h-icon-chevron-left"></i> in the upper right hand corner of the page <i class="fa fa-arrow-circle-right  fa-rotate-315" aria-hidden="true"></i>
+```
+
+The feedback tool is [hypothes.is](https://hypothes.is/), which enables sentence-level annotation directly on the page. There is a script in  `hypothesis.html`, which we call in `_output.yml` like this:
+
+```
+bookdown::gitbook:
+  includes:
+    in_header: [hypothesis.html, google_analytics.html]
+  css: [style.css, font-awesome.css]
+```
+
+The `hypothesis.html` file contains a short script that activates the tool on this site. The ORT also had code to track the use of [hypothes.is](https://hypothes.is/), but I don't understand how that works, so I haven't done it here. To make the fontawesome icons work, we need to have `font-awesome.min.css` in our project. 
+
+There are also additions to `style.css` to make the inline images in the custom block (named `rmdreview`), and the speech bubbles on the left side of the block:
+
+```
+.h-icon-chevron-left {
+    background: white;
+	    padding: 3px;
+	    border: #eee 1px solid;
+	    color: #666;
+	  }
+
+.fa-rotate-315 {
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    -o-transform: rotate(315deg);
+    transform: rotate(315deg);
+}
+
+.rmdreview {
+  padding: 1em 1em 1em 5em;
+  margin-bottom: 0px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  position:relative;
+}
+
+.rmdreview:before {
+    content: "\f0e6";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    top:10px;
+    bottom: 0px;
+    font-size: 60px;
+ }
+
+```
+
+### Call-to-action block
+
+The call-to-action block can appear at the bottom of each page to invite the reader to submit their email address to receive updates on the book. This enables us to collect email addresses into a google sheet. The custom block looks like this:
+
+```{block2, sale-example, type='rmdsale'}
+Want to know when the book is for sale? Enter your email so I can let you know. 
+<iframe src="email_submit.html" width="760" height="30" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+```
+
+This custom block is called `rmdsale`, and is styled with some css:
+
+```
+ .rmdsale {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 0px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  position:relative;
+}
+
+.rmdsale:before {
+    content: "\f07a";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    top:15px;
+    bottom: 0px;
+    font-size: 40px;
+ }
+```
+The text field for readers to enter their email address is created by code in `email_submit.html`, which inserts some elements from a google form into the page.
+
+To make this work, we have to create a new google form (using the 'old google forms', not the current version), and copy over the key and HTML element details from the default form view. Chrome's element inspector is very handy for identifying the element details that need to go in `email_submit.html`. 
+
+The confirmation page that the reader sees after they submit their email is not yet elegant, it's just the default google forms page. I'm not sure what to do about that. 
+
+### Google analytics
+
+This is already used in many bookdown projects, and is easy to enable. We go to <https://analytics.google.com>, create a new account, and get the code snippet and paste it into `google_analytics.html`. After that, we add a reference to `google_analytics.html` in `_output.yml`, as noted above. And that's it for setting up the analytics. 
+
+### Not yet implemented
+
+Matt's ORT contains several other features that are not implemented here. These include tracking of hypothes.is use, A/B testing, a tool to translate the book into numerous languages. I'm not sure how to implement those, and would welcome assistance! 
+
+### Issues
+
+It is important to keep `style.css` and the custom html files in the top level directory of the book. I tried putting them all in a directory together, but couldn't get it to work. 

@@ -4,17 +4,17 @@ Most of the text on this page is taken from [Matthew Salganik's](https://twitter
 
 Open Review means that you can freely read the book and easily help to make it better. You can offer suggestions by make annotations using [hypothes.is](https://hypothes.is/), an open source annotation system. Further, the website will be collecting your implicit feedback by tracking the readership and abandonment rate of each section of the book.
 
-Open Review takes place at the same time as peer review. The feedback from Open Review and peer review will be used to create a revised manuscript. The Open Review period will end when the final manuscript is submitted to the publisher. 
+Open Review takes place before and at the same time as the book publisher's peer review. The feedback from Open Review and peer review will be used to create a revised manuscript. The Open Review period will end when the final manuscript is submitted to the publisher. 
 
 ## FAQ about open review
 
 ### What kind of feedback are you looking for?
 
-Open Review is not just about catching typos. Rather, Open Review is designed to collect all types of feedback, and I'd particularly welcome any feedback that you have about the substance of the book. Are there sections that you find particularly confusing? Are their points that you find particularly important? Am I making claims that you think need to be refined? Are there parts of the book that you think should be removed? When in doubt, I think you should follow one of the main principles at Wikipedia: Be bold.
+Open Review is not just about catching typos. Rather, Open Review is designed to collect all types of feedback, and I'd particularly welcome any feedback that you have about the substance of the book. Are there sections that you find particularly confusing? Are their points that you find particularly important? Am I making claims that you think need to be refined? Are there parts of the book that you think should be removed? When in doubt, I think you should follow one of the main principles at Wikipedia: [Be bold](https://en.wikipedia.org/wiki/Wikipedia:Be_bold).
 
 ### Can I see the annotations that others are making?
 
-Yes, all the annotations are public. You can see them on right hand side of the each page or you can read them in stream form.
+Yes, all the annotations are public. You can see them on right hand side of the each page or you can read them in [stream form](https://hypothes.is/stream?q=https://hypothes.is/stream?q=benmarwick-bookdown-ort).
 
 ### What are the benefits for readers?
 
@@ -27,6 +27,10 @@ The Open Review process will benefit both authors and publishers, even if they h
 ### Has anyone ever done something like this before?
 
 This is based on [Matthew Salganik's](https://twitter.com/msalganik) [Open Review Toolkit](http://www.openreviewtoolkit.org/). He's written about some related efforts here: <http://www.bitbybitbook.com/en/open-review/>
+
+### What kind of information are you collecting and how will that information be used?
+
+Please read our privacy and consent policy, below. 
 
 ### How I can learn more about traditional peer review of academic books?
 The AAUP recently published [a report](http://www.aaupnet.org/resources/for-members/handbooks-and-toolkits/peer-review-best-practices) on best practices for peer review.
@@ -45,7 +49,7 @@ On this website, we are making the complete text of the book available at no cos
 
 ### What information do we collect?
 
-We use Google Analytics to collect information about how you interact with this website. Further, like most websites, we use cookies to enhance your experience, gather general visitor information, and track visits to our website. Please refer to the "do we use cookies?" section below for information about cookies and how we use them.
+We use [Google Analytics](https://analytics.google.com/) to collect information about how you interact with this website. Further, like most websites, we use [cookies](https://en.wikipedia.org/wiki/HTTP_cookie) to enhance your experience, gather general visitor information, and track visits to our website. Please refer to the "do we use cookies?" section below for information about cookies and how we use them.
 
 ### How do we use your information?
 
@@ -55,11 +59,11 @@ Any of the information that we collect may be used for research, to improve the 
 
 We implement a variety of security measures to maintain the safety of the information that you provide us.
 
-Most of the browsing information that we have is stored Google Analytics, and you can read more about their security and privacy principles.
+Most of the browsing information that we have is stored Google Analytics, and you can read more about their [security and privacy principles](https://support.google.com/analytics/answer/6004245?hl=en).
 
-Annotations that you add are managed by hypothes.is, and you can read more about their terms of service.
+Annotations that you add are managed by [hypothes.is](https://hypothes.is/), and you can read more about their [terms of service](https://hypothes.is/terms-of-service/).
 
-Our website is hosted by Github Pages, and you can read more about Github's terms of service.
+Our website is hosted by [Github Pages](https://pages.github.com/), and you can read more about Github's [terms of service](https://help.github.com/articles/github-terms-of-service/).
 
 ### Do we use cookies?
 

@@ -33,8 +33,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="literature.html">
-<link rel="next" href="custom-blocks.html">
+<link rel="prev" href="final-words.html">
+<link rel="next" href="open-review.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -176,18 +176,108 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="methods" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Methods</h1>
-<p>We describe our methods in this chapter.</p>
+<div id="mods" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Modifications</h1>
+<p><em>Ben Marwick</em></p>
+<p>In this <a href="https://github.com/benmarwick/bookdown-ort">template book</a>, I have made some modifications inspired by <a href="https://twitter.com/msalganik">Matthew Salganik’s</a> <a href="http://www.openreviewtoolkit.org/">Open Review Toolkit</a>. The ORT is an excellent project to enable low-friction engagement between the author and readers. However, it pre-dates bookdown and lacks some of its flexibility, so this is an effort to bring some of the features of the ORT into bookdown. I’ve made three modifications: an open review block, a call-to-action block, and added google analytics.</p>
+<div id="open-review-block" class="section level3">
+<h3><span class="header-section-number">7.0.1</span> Open review block</h3>
+<p>This is a custom block that can appear at the top of each page informing the reader that they can give immediate feedback directly on the page. It looks like this:</p>
 
+<div class="rmdreview">
+This book is in <b><a href="https://github.com/benmarwick/aswr">Open Review</a></b>. I want your feedback to make the book better for you and other readers. To add your annotation, <span style="background-color: #3297FD; color: white">select some text</span> and then click the <i class="h-icon-annotate"></i> on the pop-up menu. To see the annotations of others, click the <i class="h-icon-chevron-left"></i> in the upper right hand corner of the page <i class="fa fa-arrow-circle-right  fa-rotate-315" aria-hidden="true"></i>
+</div>
+<p></p>
+<p>The feedback tool is <a href="https://hypothes.is/">hypothes.is</a>, which enables sentence-level annotation directly on the page. There is a script in <code>hypothesis.html</code>, which we call in <code>_output.yml</code> like this:</p>
+<pre><code>bookdown::gitbook:
+  includes:
+    in_header: [hypothesis.html, google_analytics.html]
+  css: [style.css, font-awesome.css]</code></pre>
+<p>The <code>hypothesis.html</code> file contains a short script that activates the tool on this site. The ORT also had code to track the use of <a href="https://hypothes.is/">hypothes.is</a>, but I don’t understand how that works, so I haven’t done it here. To make the fontawesome icons work, we need to have <code>font-awesome.min.css</code> in our project.</p>
+<p>There are also additions to <code>style.css</code> to make the inline images in the custom block (named <code>rmdreview</code>), and the speech bubbles on the left side of the block:</p>
+<pre><code>.h-icon-chevron-left {
+    background: white;
+        padding: 3px;
+        border: #eee 1px solid;
+        color: #666;
+      }
+
+.fa-rotate-315 {
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    -o-transform: rotate(315deg);
+    transform: rotate(315deg);
+}
+
+.rmdreview {
+  padding: 1em 1em 1em 5em;
+  margin-bottom: 0px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  position:relative;
+}
+
+.rmdreview:before {
+    content: &quot;\f0e6&quot;;
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    top:10px;
+    bottom: 0px;
+    font-size: 60px;
+ }
+</code></pre>
+</div>
+<div id="call-to-action-block" class="section level3">
+<h3><span class="header-section-number">7.0.2</span> Call-to-action block</h3>
+<p>The call-to-action block can appear at the bottom of each page to invite the reader to submit their email address to receive updates on the book. This enables us to collect email addresses into a google sheet. The custom block looks like this:</p>
+
+<div class="rmdsale">
+Want to know when the book is for sale? Enter your email so I can let you know. <iframe src="email_submit.html" width="760" height="30" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</div>
+<p></p>
+<p>This custom block is called <code>rmdsale</code>, and is styled with some css:</p>
+<pre><code> .rmdsale {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 0px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  position:relative;
+}
+
+.rmdsale:before {
+    content: &quot;\f07a&quot;;
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    top:15px;
+    bottom: 0px;
+    font-size: 40px;
+ }</code></pre>
+<p>The text field for readers to enter their email address is created by code in <code>email_submit.html</code>, which inserts some elements from a google form into the page.</p>
+<p>To make this work, we have to create a new google form (using the ‘old google forms’, not the current version), and copy over the key and HTML element details from the default form view. Chrome’s element inspector is very handy for identifying the element details that need to go in <code>email_submit.html</code>.</p>
+<p>The confirmation page that the reader sees after they submit their email is not yet elegant, it’s just the default google forms page. I’m not sure what to do about that.</p>
+</div>
+<div id="google-analytics" class="section level3">
+<h3><span class="header-section-number">7.0.3</span> Google analytics</h3>
+<p>This is already used in many bookdown projects, and is easy to enable. We go to <a href="https://analytics.google.com" class="uri">https://analytics.google.com</a>, create a new account, and get the code snippet and paste it into <code>google_analytics.html</code>. After that, we add a reference to <code>google_analytics.html</code> in <code>_output.yml</code>, as noted above. And that’s it for setting up the analytics.</p>
+</div>
+<div id="not-yet-implemented" class="section level3">
+<h3><span class="header-section-number">7.0.4</span> Not yet implemented</h3>
+<p>Matt’s ORT contains several other features that are not implemented here. These include tracking of hypothes.is use, A/B testing, a tool to translate the book into numerous languages. I’m not sure how to implement those, and would welcome assistance!</p>
+</div>
+<div id="issues" class="section level3">
+<h3><span class="header-section-number">7.0.5</span> Issues</h3>
+<p>It is important to keep <code>style.css</code> and the custom html files in the top level directory of the book. I tried putting them all in a directory together, but couldn’t get it to work.</p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="literature.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="custom-blocks.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+<a href="final-words.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="open-review.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
 
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
@@ -206,7 +296,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/benmarwick/bookdown-ort/edit/master/03-method.Rmd",
+"link": "https://github.com/benmarwick/bookdown-ort/edit/master/97-modifications.Rmd",
 "text": "Edit"
 },
 "download": ["bookdown-demo.pdf"],
