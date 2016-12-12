@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9) (preloaded format=xelatex 2016.7.15)  12 DEC 2016 00:15
+This is XeTeX, Version 3.14159265-2.6-0.99996 (MiKTeX 2.9) (preloaded format=xelatex 2016.7.15)  12 DEC 2016 01:29
 entering extended mode
 **./bookdown-demo.tex
 (bookdown-demo.tex
@@ -933,12 +933,12 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 \BeginKnitrBlock{rmdreview}
+l.176 \BeginKnitrBlock{rmdreview}
                                   
 Here is how much of TeX's memory you used:
  25218 strings out of 428408
  439578 string characters out of 3159514
- 493441 words of memory out of 3000000
+ 494441 words of memory out of 3000000
  28399 multiletter control sequences out of 15000+200000
  16383 words of font info for 47 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
