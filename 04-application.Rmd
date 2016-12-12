@@ -1,7 +1,22 @@
-# Applications
+# Custom blocks
 
-Some _significant_ applications are demonstrated in this chapter.
+```{block2, note-text, type='rmdnote'}
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under the terms of the
+GNU General Public License versions 2 or 3.
+For more information about these matters see
+http://www.gnu.org/licenses/.
+```
 
-## Example one
+```{block2, note-text, type='rmdcaution'}
+```
 
-## Example two
+
+```{block2, note-text, type='rmdimportant'}
+```
+
+```{block2, note-text, type='rmdtip'}
+```
+
+```{block2, note-text, type='rmdwarning'}
+```

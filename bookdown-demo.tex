@@ -1,0 +1,325 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={A Minimal Book Example},
+            pdfauthor={Yihui Xie},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{A Minimal Book Example}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Yihui Xie}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{2016-12-12}
+
+
+\let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter{Prerequisites}\label{prerequisites}
+
+This is a \emph{sample} book written in \textbf{Markdown}. You can use
+anything that Pandoc's Markdown supports, e.g., a math equation
+\(a^2 + b^2 = c^2\).
+
+For now, you have to install the development versions of
+\textbf{bookdown} from Github:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{devtools::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"rstudio/bookdown"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Remember each Rmd file contains one and only one chapter, and a chapter
+is defined by the first-level heading \texttt{\#}.
+
+To compile this example to PDF, you need to install XeLaTeX.
+
+\section{Modifications}\label{modifications}
+
+\emph{Ben Marwick}
+
+In this \href{https://github.com/benmarwick/bookdown-ort}{template
+book}, I have made some modifications inspired by
+\href{https://twitter.com/msalganik}{Matthew Salganik's}
+\href{http://www.openreviewtoolkit.org/}{Open Review Toolkit}. The ORT
+is an excellent project to enable low-friction engagement between the
+author and readers. However, it pre-dates bookdown and lacks some of its
+flexibility, so this is an effort to bring some of the features of the
+ORT into bookdown. I've made three modifications: an open review block,
+a call-to-action block, and added google analytics.
+
+\subsection{Open review block}\label{open-review-block}
+
+This is a custom block that can appear at the top of each page informing
+the reader that they can give immediate feedback directly on the page.
+It looks like this:
+
+\BeginKnitrBlock{rmdreview}
+This book is in Open Review. I want your feedback to make the book
+better for you and other readers. To add your annotation, {select some
+text} and then click the on the pop-up menu. To see the annotations of
+others, click the in the upper right hand corner of the page
+\EndKnitrBlock{rmdreview}
+
+The feedback tool is \href{https://hypothes.is/}{hypothes.is}, which
+enables sentence-level annotation directly on the page. There is a
+script in \texttt{\_includes/hypothesis.html}, which we call in
+\texttt{\_output.yml} like this:
+
+\begin{verbatim}
+bookdown::gitbook:
+  includes:
+    in_header: [_includes/hypothesis.html, _includes/google_analytics.html]
+  css: [_includes/style.css, _includes/font-awesome.css]
+\end{verbatim}
+
+The \texttt{hypothesis.html} file contains a short script that activates
+the tool on this site. The ORT also had code to track the use of
+\href{https://hypothes.is/}{hypothes.is}, but I don't understand how
+that works, so I haven't done it here. To make the fontawesome icons
+work, we need to have \texttt{\_included/font-awesome.min.css} in our
+project.
+
+There are also additions to \texttt{style.css} to make the inline images
+in the custom block (named \texttt{rmdreview}), and the speech bubbles
+on the left side of the block:
+
+\begin{verbatim}
+.h-icon-chevron-left {
+    background: white;
+        padding: 3px;
+        border: #eee 1px solid;
+        color: #666;
+      }
+
+.fa-rotate-315 {
+    -webkit-transform: rotate(315deg);
+    -moz-transform: rotate(315deg);
+    -ms-transform: rotate(315deg);
+    -o-transform: rotate(315deg);
+    transform: rotate(315deg);
+}
+
+.rmdreview {
+  padding: 1em 1em 1em 5em;
+  margin-bottom: 0px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  position:relative;
+}
+
+.rmdreview:before {
+    content: "\f0e6";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    top:10px;
+    bottom: 0px;
+    font-size: 60px;
+ }
+\end{verbatim}
+
+\subsection{Call-to-action block}\label{call-to-action-block}
+
+The call-to-action block can appear at the bottom of each page to invite
+the reader to submit their email address to receive updates on the book.
+This enables us to collect email addresses into a google sheet. The
+custom block looks like this:
+
+\BeginKnitrBlock{rmdsale}
+Want to know when the book is for sale? Enter your email so I can let
+you know. Loading\ldots{}
+\EndKnitrBlock{rmdsale}
+
+This custom block is called \texttt{rmdsale}, and is styled with some
+css:
+
+\begin{verbatim}
+ .rmdsale {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 0px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  position:relative;
+}
+
+.rmdsale:before {
+    content: "\f07a";
+    font-family: FontAwesome;
+    left:10px;
+    position:absolute;
+    top:15px;
+    bottom: 0px;
+    font-size: 40px;
+ }
+\end{verbatim}
+
+The text field for readers to enter their email address is created by
+code in \texttt{\_includes/email\_submit.html}, which inserts some
+elements from a google form into the page.
+
+To make this work, we have to create a new google form (using the `old
+google forms', not the current version), and copy over the key and HTML
+element details from the default form view. Chrome's element inspector
+is very handy for identifying the element details that need to go in
+\texttt{email\_submit.html}.
+
+The confirmation page that the reader sees after they submit their email
+is not yet elegant, it's just the default google forms page. I'm not
+sure what to do about that.
+
+\subsection{Google analytics}\label{google-analytics}
+
+This is already used in many bookdown projects, and is easy to enable.
+We go to \url{https://analytics.google.com}, create a new account, and
+get the code snippet and paste it into \texttt{google\_analytics.html}
+in \texttt{\_includes/}. After that, we add a reference to
+\texttt{google\_analytics.html} in \texttt{\_output.yml}, as noted
+above. And that's it for setting up the analytics.
+
+\subsection{Not yet implemented}\label{not-yet-implemented}
+
+Matt's ORT contains several other features that are not implemented
+here. These include tracking of hypothes.is use, A/B testing, a tool to
+translate the book into numerous languages. I'm not sure how to
+implement those, and would welcome assistance!
+
+\subsection{Issues}\label{issues}
+
+Why doesn't \texttt{docs/} get all the files from \texttt{\_includes/}?
+Currently I only see \texttt{style.css} and \texttt{email\_submit.html}.
+That's odd, and stops the custom blocks from looking as they should.
+
+\chapter{Introduction}\label{intro}
+
+\chapter{Literature}\label{literature}
+
+\chapter{Methods}\label{methods}
+
+\chapter{Custom blocks}\label{custom-blocks}
+
+\chapter{Final Words}\label{final-words}
+
+\chapter{Open Review}\label{open-review}
+
+\chapter{Placeholder}\label{placeholder}
+
+
+\end{document}

@@ -101,7 +101,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </style>
 
 <link rel="stylesheet" href="_includes\style.css" type="text/css" />
-<link rel="stylesheet" href="_includes\font-awesome.css" type="text/css" />
+<link rel="stylesheet" href="_includes\font-awesome.min.css" type="text/css" />
 </head>
 
 <body>
@@ -122,15 +122,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#call-to-action-block"><i class="fa fa-check"></i><b>1.1.2</b> Call-to-action block</a></li>
 <li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#google-analytics"><i class="fa fa-check"></i><b>1.1.3</b> Google analytics</a></li>
 <li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#not-yet-implemented"><i class="fa fa-check"></i><b>1.1.4</b> Not yet implemented</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#issues"><i class="fa fa-check"></i><b>1.1.5</b> Issues</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
 <li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
-<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
-</ul></li>
+<li class="chapter" data-level="5" data-path="custom-blocks.html"><a href="custom-blocks.html"><i class="fa fa-check"></i><b>5</b> Custom blocks</a></li>
 <li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
 <li class="chapter" data-level="7" data-path="open-review.html"><a href="open-review.html"><i class="fa fa-check"></i><b>7</b> Open Review</a><ul>
 <li class="chapter" data-level="7.1" data-path="open-review.html"><a href="open-review.html#faq-about-open-review"><i class="fa fa-check"></i><b>7.1</b> FAQ about open review</a><ul>
@@ -193,7 +191,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="modifications" class="section level2">
 <h2><span class="header-section-number">1.1</span> Modifications</h2>
 <p><em>Ben Marwick</em></p>
-<p>In this template book, I have made the following modifications inspired by <a href="https://twitter.com/msalganik">Matthew Salganik’s</a> <a href="http://www.openreviewtoolkit.org/">Open Review Toolkit</a>. The ORT is an excellent project to enable low-friction engagement between the author and readers. However, it pre-dates bookdown and lacks some of its flexibility, so this is an effort to bring some of the features of the ORT into bookdown. I’ve made three modifications: an open review block, a call-to-action block, and added google analytics.</p>
+<p>In this <a href="https://github.com/benmarwick/bookdown-ort">template book</a>, I have made some modifications inspired by <a href="https://twitter.com/msalganik">Matthew Salganik’s</a> <a href="http://www.openreviewtoolkit.org/">Open Review Toolkit</a>. The ORT is an excellent project to enable low-friction engagement between the author and readers. However, it pre-dates bookdown and lacks some of its flexibility, so this is an effort to bring some of the features of the ORT into bookdown. I’ve made three modifications: an open review block, a call-to-action block, and added google analytics.</p>
 <div id="open-review-block" class="section level3">
 <h3><span class="header-section-number">1.1.1</span> Open review block</h3>
 <p>This is a custom block that can appear at the top of each page informing the reader that they can give immediate feedback directly on the page. It looks like this:</p>
@@ -278,7 +276,10 @@ Want to know when the book is for sale? Enter your email so I can let you know. 
 <div id="not-yet-implemented" class="section level3">
 <h3><span class="header-section-number">1.1.4</span> Not yet implemented</h3>
 <p>Matt’s ORT contains several other features that are not implemented here. These include tracking of hypothes.is use, A/B testing, a tool to translate the book into numerous languages. I’m not sure how to implement those, and would welcome assistance!</p>
-<p>Why doesn’t <code>docs/</code> get all the files from <code>_includes/</code>? Currently I only see <code>style.css</code> and <code>email_submit.html</code>. That’s odd</p>
+</div>
+<div id="issues" class="section level3">
+<h3><span class="header-section-number">1.1.5</span> Issues</h3>
+<p>Why doesn’t <code>docs/</code> get all the files from <code>_includes/</code>? Currently I only see <code>style.css</code> and <code>email_submit.html</code>. That’s odd, and stops the custom blocks from looking as they should.</p>
 
 </div>
 </div>
