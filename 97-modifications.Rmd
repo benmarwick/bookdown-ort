@@ -18,12 +18,12 @@ The feedback tool is [hypothes.is](https://hypothes.is/), which enables sentence
 bookdown::gitbook:
   includes:
     in_header: [hypothesis.html, google_analytics.html]
-  css: [style.css, font-awesome.css]
+  css: style.css
 ```
 
-The `hypothesis.html` file contains a short script that activates the tool on this site. The ORT also had code to track the use of [hypothes.is](https://hypothes.is/), but I don't understand how that works, so I haven't done it here. To make the fontawesome icons work, we need to have `font-awesome.min.css` in our project. 
+The `hypothesis.html` file contains a short script that activates the tool on this site.  It also enables us to use the icons in the block above. The ORT also had code to track the use of [hypothes.is](https://hypothes.is/), but I don't understand how that works, so I haven't done it here. 
 
-There are also additions to `style.css` to make the inline images in the custom block (named `rmdreview`), and the speech bubbles on the left side of the block:
+There are also additions to `style.css` to add a little styling to one of the inline images in the custom block (named `rmdreview`), and adds the speech bubbles on the left side of the block:
 
 ```
 .h-icon-chevron-left {

@@ -26,7 +26,7 @@
 <meta name="author" content="Yihui Xie">
 
 
-<meta name="date" content="2016-12-12">
+<meta name="date" content="2016-12-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -101,7 +101,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
-<link rel="stylesheet" href="font-awesome.min.css" type="text/css" />
 </head>
 
 <body>
@@ -193,9 +192,9 @@ This book is in <b><a href="open.html#open">Open Review</a></b>. I want your fee
 <pre><code>bookdown::gitbook:
   includes:
     in_header: [hypothesis.html, google_analytics.html]
-  css: [style.css, font-awesome.css]</code></pre>
-<p>The <code>hypothesis.html</code> file contains a short script that activates the tool on this site. The ORT also had code to track the use of <a href="https://hypothes.is/">hypothes.is</a>, but I don’t understand how that works, so I haven’t done it here. To make the fontawesome icons work, we need to have <code>font-awesome.min.css</code> in our project.</p>
-<p>There are also additions to <code>style.css</code> to make the inline images in the custom block (named <code>rmdreview</code>), and the speech bubbles on the left side of the block:</p>
+  css: style.css</code></pre>
+<p>The <code>hypothesis.html</code> file contains a short script that activates the tool on this site. It also enables us to use the icons in the block above. The ORT also had code to track the use of <a href="https://hypothes.is/">hypothes.is</a>, but I don’t understand how that works, so I haven’t done it here.</p>
+<p>There are also additions to <code>style.css</code> to add a little styling to one of the inline images in the custom block (named <code>rmdreview</code>), and adds the speech bubbles on the left side of the block:</p>
 <pre><code>.h-icon-chevron-left {
     background: white;
         padding: 3px;

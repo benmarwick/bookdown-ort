@@ -1,7 +1,7 @@
 bookdown::gitbook:
   includes:
     in_header: [hypothesis.html, google_analytics.html]
-  css: [style.css, font-awesome.min.css]
+  css: style.css
   config:
     sharing: null
     toc:
