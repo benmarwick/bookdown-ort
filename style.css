@@ -70,6 +70,13 @@
     font-size: 40px;
  }
 
+.rmdtranslate {
+  padding: 1em 1em 1em 5em;
+  margin-bottom: 0px;
+  background: #f5f5f5 5px center/3em no-repeat;
+  position:relative;
+}
+
 p.caption {
   color: #777;
   margin-top: 10px;
