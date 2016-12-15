@@ -1,6 +1,8 @@
 bookdown::gitbook:
   includes:
     in_header: [hypothesis.html, google_analytics.html]
+    before_body: open_review_block.html
+    after_body: call_to_action_block.html
   css: style.css
   config:
     sharing: null

@@ -8,7 +8,7 @@
   <title>A Minimal Book Example</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.3.4 and GitBook 2.6.7">
 
   <meta property="og:title" content="A Minimal Book Example" />
   <meta property="og:type" content="book" />
@@ -26,7 +26,7 @@
 <meta name="author" content="Yihui Xie">
 
 
-<meta name="date" content="2016-12-13">
+<meta name="date" content="2016-12-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -106,6 +106,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -176,22 +177,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
+
+<div class = rmdreview>
+This book is in <b><a href="open.html#open">Open Review</a></b>. I want your feedback to make the book better for you and other readers. To add your annotation, <span style="background-color: #3297FD; color: white">select some text</span> and then click the <i class="h-icon-annotate"></i> on the pop-up menu. To see the annotations of others, click the <i class="h-icon-chevron-left"></i> in the upper right hand corner of the page <i class="fa fa-arrow-circle-right  fa-rotate-315" aria-hidden="true"></i>
+</div>
 <div id="mods" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Modifications</h1>
 <p><em>Ben Marwick</em></p>
 <p>In this <a href="https://github.com/benmarwick/bookdown-ort">template book</a>, I have made some modifications inspired by <a href="https://twitter.com/msalganik">Matthew Salganik’s</a> <a href="http://www.openreviewtoolkit.org/">Open Review Toolkit</a>. The ORT is an excellent project to enable low-friction engagement between the author and readers. However, it pre-dates bookdown and lacks some of its flexibility, so this is an effort to bring some of the features of the ORT into bookdown. I’ve made three modifications: an open review block, a call-to-action block, and added google analytics.</p>
 <div id="open-review-block" class="section level3">
 <h3><span class="header-section-number">7.0.1</span> Open review block</h3>
-<p>This is a custom block that can appear at the top of each page informing the reader that they can give immediate feedback directly on the page. It looks like this:</p>
-
-<div class="rmdreview">
-This book is in <b><a href="open.html#open">Open Review</a></b>. I want your feedback to make the book better for you and other readers. To add your annotation, <span style="background-color: #3297FD; color: white">select some text</span> and then click the <i class="h-icon-annotate"></i> on the pop-up menu. To see the annotations of others, click the <i class="h-icon-chevron-left"></i> in the upper right hand corner of the page <i class="fa fa-arrow-circle-right  fa-rotate-315" aria-hidden="true"></i>
-</div>
-<p></p>
+<p>This is a custom block that is appearing at the top of each page informing the reader that they can give immediate feedback directly on the page. The HTML for this block is in <code>open_review_block.html</code></p>
 <p>The feedback tool is <a href="https://hypothes.is/">hypothes.is</a>, which enables sentence-level annotation directly on the page. There is a script in <code>hypothesis.html</code>, which we call in <code>_output.yml</code> like this:</p>
 <pre><code>bookdown::gitbook:
   includes:
     in_header: [hypothesis.html, google_analytics.html]
+    before_body: open_review_block.html
+    after_body: call_to_action_block.html
   css: style.css</code></pre>
 <p>The <code>hypothesis.html</code> file contains a short script that activates the tool on this site. It also enables us to use the icons in the block above. The ORT also had code to track the use of <a href="https://hypothes.is/">hypothes.is</a>, but I don’t understand how that works, so I haven’t done it here.</p>
 <p>There are also additions to <code>style.css</code> to add a little styling to one of the inline images in the custom block (named <code>rmdreview</code>), and adds the speech bubbles on the left side of the block:</p>
@@ -230,13 +232,9 @@ This book is in <b><a href="open.html#open">Open Review</a></b>. I want your fee
 </div>
 <div id="call-to-action-block" class="section level3">
 <h3><span class="header-section-number">7.0.2</span> Call-to-action block</h3>
-<p>The call-to-action block can appear at the bottom of each page to invite the reader to submit their email address to receive updates on the book. This enables us to collect email addresses into a google sheet. The custom block looks like this:</p>
-
-<div class="rmdsale">
-Want to know when the book is for sale? Enter your email so I can let you know. <iframe src="email_submit.html" width="760" height="30" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</div>
-<p></p>
-<p>This custom block is called <code>rmdsale</code>, and is styled with some css:</p>
+<p>The call-to-action block appears at the bottom of each page to invite the reader to submit their email address to receive updates on the book. This enables us to collect email addresses into a google sheet. The custom block looks like this:</p>
+<p>This custom block is called <code>rmdsale</code>, the html for it is stored in <code>all_to_action_block.html</code>, which we refer to in the <code>_output.yml</code> file, as above.</p>
+<p>The call-to-action block is styled with some css:</p>
 <pre><code> .rmdsale {
   padding: 1em 1em 1em 4em;
   margin-bottom: 0px;
@@ -297,6 +295,11 @@ SOFTWARE.</code></pre>
 <p>The text of this chapter is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. This means it may be freely reused if appropriate credit is given.</p>
 
 </div>
+</div>
+
+<div class = rmdsale>
+Want to know when the book is for sale? Enter your email so I can let you know.
+<iframe src="email_submit.html" width="760" height="30" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 </div>
             </section>
 
